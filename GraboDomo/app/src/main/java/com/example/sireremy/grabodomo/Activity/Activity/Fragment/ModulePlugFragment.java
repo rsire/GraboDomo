@@ -13,6 +13,12 @@ import android.widget.Toast;
 import com.example.sireremy.grabodomo.Activity.Activity.Model.Plug;
 import com.example.sireremy.grabodomo.R;
 
+/**
+ * @author Sire Remy
+ * @version 1
+ * Fragment appellé dans la main activity
+ */
+
 public class ModulePlugFragment extends Fragment implements View.OnClickListener{
 
     /**

@@ -3,7 +3,9 @@ package com.example.sireremy.grabodomo.Activity.Activity.Model;
 import org.json.JSONObject;
 
 /**
- * Created by SireRemy on 03/08/2017.
+ * @author Sire Remy
+ * @version 1
+ * Modèle objet de Plug avec ses getters et setters Il se construit directement a partir d'un JSONObject
  */
 
 public class Plug {
