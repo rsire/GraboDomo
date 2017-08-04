@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">GraboDomo</string>
+    <string name="versionCode">1</string>
+    <string name="versionName">1.0</string>
+
+    <!-- Bottom Bar  -->
+    <string name="tab_home">Home</string>
+    <string name="tab_senario">Scenario</string>
+    <string name="tab_settings">Settings</string>
+
+
+</resources>

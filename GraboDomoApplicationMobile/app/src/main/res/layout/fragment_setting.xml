@@ -1,0 +1,248 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:id="@+id/cardView"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="0dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:layout_marginLeft="4dp"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textAlignment="center"
+                android:text="Lien Jeedom"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@color/colorPrimary"
+                android:textSize="18dp"
+                android:text="Lien interne"/>
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/Lieu"
+                android:layout_gravity="right"
+                android:hint="http://192.168.X.X"
+                android:paddingRight="8dp"
+                android:paddingTop="4dp"
+                android:maxLength="20"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@color/colorPrimary"
+                android:textSize="18dp"
+                android:text="Lien externe"/>
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/externe"
+                android:layout_gravity="right"
+                android:hint="http://192.168.X.X"
+                android:paddingRight="8dp"
+                android:paddingTop="4dp"
+                android:maxLength="20"/>
+
+            <Button
+                android:paddingTop="4dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:id="@+id/AjouterOffre"
+                android:backgroundTint="@color/colorPrimaryDark"
+                android:text="Valider"
+                android:textColor="#FFFFFF"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="50dp"
+                android:textAlignment="center"
+                android:text="En savoir plus"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:layout_width="202dp"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:textColor="@color/colorPrimary"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/T"
+                        android:text="Version de l'app :"
+                        android:textStyle="bold"
+                        android:paddingTop="4dp"
+                        android:maxLength="20"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:textColor="@color/colorPrimary"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/Ti"
+                        android:text="Version Jeedom :"
+                        android:textStyle="bold"
+                        android:paddingTop="4dp"
+                        android:maxLength="20"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:textColor="@color/colorPrimary"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/Tit"
+                        android:text="Version plugin :"
+                        android:textStyle="bold"
+                        android:paddingTop="4dp"
+                        android:maxLength="20"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:textColor="@color/colorPrimary"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/Titr"
+                        android:text="Dimensions :"
+                        android:textStyle="bold"
+                        android:paddingTop="4dp"
+                        android:maxLength="20"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:textColor="@color/colorPrimary"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/Titre"
+                        android:text="Nombre de Cmd :"
+                        android:textStyle="bold"
+                        android:paddingTop="4dp"
+                        android:maxLength="20"/>
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:textColor="@color/colorPrimary"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/Titree"
+                        android:text="Temps de récuperation sync :"
+                        android:textStyle="bold"
+                        android:paddingTop="4dp"
+                        android:maxLength="30"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:textColor="@color/colorPrimary"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/Titreee"
+                        android:text="Temps de traintement sync :"
+                        android:textStyle="bold"
+                        android:paddingTop="4dp"
+                        android:maxLength="30"/>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="right"
+                        android:id="@+id/NomEntreprisee"
+                        android:textColor="@color/colorAccent"
+                        android:text="@string/versionName"
+                        android:paddingRight="8dp"
+                        android:paddingTop="4dp"
+                        android:maxLength="20"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="right"
+                        android:id="@+id/NomEntrepriseee"
+                        android:textColor="@color/colorAccent"
+                        android:text="IMERIR"
+                        android:paddingRight="8dp"
+                        android:paddingTop="4dp"
+                        android:maxLength="20"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="right"
+                        android:id="@+id/NomEntrepriseeeee"
+                        android:textColor="@color/colorAccent"
+                        android:text="IMERIR"
+                        android:paddingRight="8dp"
+                        android:paddingTop="4dp"
+                        android:maxLength="20"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="right"
+                        android:id="@+id/NomEntrepriseeeeee"
+                        android:textColor="@color/colorAccent"
+                        android:text="IMERIR"
+                        android:paddingRight="8dp"
+                        android:paddingTop="4dp"
+                        android:maxLength="20"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="right"
+                        android:id="@+id/NomEntrepriseeeeeeee"
+                        android:textColor="@color/colorAccent"
+                        android:text="IMERIR"
+                        android:paddingRight="8dp"
+                        android:paddingTop="4dp"
+                        android:maxLength="20"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="right"
+                        android:id="@+id/NomEntrepriseeeeez"
+                        android:textColor="@color/colorAccent"
+                        android:text="IMERIR"
+                        android:paddingRight="8dp"
+                        android:paddingTop="4dp"
+                        android:maxLength="20"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="right"
+                        android:id="@+id/NomEntrepriseza"
+                        android:textColor="@color/colorAccent"
+                        android:text="IMERIR"
+                        android:paddingRight="8dp"
+                        android:paddingTop="4dp"
+                        android:maxLength="20"/>
+                </LinearLayout>
+
+
+            </LinearLayout>
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:id="@+id/NomEntreprise"
+                android:textColor="@color/colorPrimaryDark"
+                android:text="A propos"
+                android:paddingRight="8dp"
+                android:paddingTop="10dp"
+                android:maxLength="20"/>
+        </LinearLayout>
+
+
+
+
+
+</android.support.v7.widget.CardView>
