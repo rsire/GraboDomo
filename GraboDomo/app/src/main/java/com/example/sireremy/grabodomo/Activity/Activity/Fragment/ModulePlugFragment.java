@@ -36,7 +36,8 @@ public class ModulePlugFragment extends Fragment implements View.OnClickListener
     Switch aSwitch;
     ImageView imageViewON;
     ImageView imageViewOFF;
-    Plug plug;
+
+    private Plug plug;
 
     @Override
     public void onViewCreated(View view, Bundle savedInstanceState) {
@@ -54,11 +55,15 @@ public class ModulePlugFragment extends Fragment implements View.OnClickListener
                     Toast.makeText(getActivity(), "ON", Toast.LENGTH_SHORT).show();
                     imageViewON.setVisibility(View.VISIBLE);
 
+                    onStart();
+
                 }
                 else {
                     //aSwitch.setText("OFF");
                     Toast.makeText(getActivity(), "OFF", Toast.LENGTH_SHORT).show();
                     imageViewON.setVisibility(View.INVISIBLE);
+
+                    onStop();
                 }
             }
         });
@@ -68,5 +73,15 @@ public class ModulePlugFragment extends Fragment implements View.OnClickListener
     @Override
     public void onClick(View view) {
 
+    }
+
+    @Override
+    public void onStart() {
+        super.onStart();
+    }
+
+    @Override
+    public void onStop() {
+        super.onStop();
     }
 }

@@ -1,5 +1,6 @@
 package com.example.sireremy.grabodomo.Activity.Activity.Fragment;
 
+import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
@@ -12,6 +13,7 @@ import android.widget.Switch;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.sireremy.grabodomo.Activity.Activity.Model.Son;
 import com.example.sireremy.grabodomo.R;
 
 /**
@@ -31,12 +33,14 @@ public class ModuleSonFragment extends Fragment implements View.OnClickListener 
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         return inflater.inflate(R.layout.activity_module_son, null);
     }
+    private Son son;
 
     Switch aSwitch;
 
     private SeekBar seekBar;
     private TextView textView;
 
+    private MediaPlayer mPlayer = null;
 
     @Override
     public void onViewCreated(View view, Bundle savedInstanceState) {
@@ -63,20 +67,19 @@ public class ModuleSonFragment extends Fragment implements View.OnClickListener 
                                 @Override
                                 public void onProgressChanged(SeekBar seekBar, int progresValue, boolean fromUser) {
                                     progress = progresValue;
+
                                 }
 
                                 @Override
                                 public void onStartTrackingTouch(SeekBar seekBar) {
-                                    // Do something here,
 
-                                    //if you want to do anything at the start of
-                                    // touching the seekbar
                                 }
 
                                 @Override
                                 public void onStopTrackingTouch(SeekBar seekBar) {
                                     // Display the value in textview
                                     textView.setText(progress + "%");
+
                                 }
                             });
 
@@ -86,7 +89,7 @@ public class ModuleSonFragment extends Fragment implements View.OnClickListener 
                     Toast.makeText(getActivity(), "OFF", Toast.LENGTH_SHORT).show();
                     seekBar.setVisibility(View.INVISIBLE);
                     textView.setVisibility(View.INVISIBLE);
-
+                    onPause();
                 }
             }
         });
@@ -97,4 +100,23 @@ public class ModuleSonFragment extends Fragment implements View.OnClickListener 
     public void onClick(View view) {
 
     }
+
+    @Override
+    public void onPause() {
+        super.onPause();
+        if(mPlayer != null) {
+            mPlayer.stop();
+            mPlayer.release();
+        }
+    }
+
+    private void playSound(int resId) {
+        if(mPlayer != null) {
+            mPlayer.stop();
+            mPlayer.release();
+        }
+        mPlayer = MediaPlayer.create(getActivity(), resId);
+        mPlayer.start();
+    }
+
 }
