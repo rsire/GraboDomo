@@ -5,10 +5,10 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 
-import com.example.sireremy.grabodomo.Activity.Activity.Fragment.Humidity.ModuleHumidityFragment;
-import com.example.sireremy.grabodomo.Activity.Activity.Fragment.Plug.ModulePlugFragment;
-import com.example.sireremy.grabodomo.Activity.Activity.Fragment.Speaker.ModuleSpeakerFragment;
-import com.example.sireremy.grabodomo.Activity.Activity.Fragment.Temperature.ModuleTemperatureFragment;
+import com.grabolosa.sireremy.library.domotique.Fragment.Humidity.ModuleHumidityFragment;
+import com.grabolosa.sireremy.library.domotique.Fragment.Plug.ModulePlugFragment;
+import com.grabolosa.sireremy.library.domotique.Fragment.Speaker.ModuleSpeakerFragment;
+import com.grabolosa.sireremy.library.domotique.Fragment.Temperature.ModuleTemperatureFragment;
 import com.example.sireremy.grabodomo.R;
 
 /**
@@ -38,7 +38,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         buttonSpeaker.setOnClickListener(this);
         buttonHumidity.setOnClickListener(this);
         buttonTemperature.setOnClickListener(this);
-
     }
 
     @Override

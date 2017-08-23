@@ -4,6 +4,7 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/GraboDomo.iml" filepath="$PROJECT_DIR$/GraboDomo.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/library.domotique/library.domotique.iml" filepath="$PROJECT_DIR$/library.domotique/library.domotique.iml" />
     </modules>
   </component>
 </project>
