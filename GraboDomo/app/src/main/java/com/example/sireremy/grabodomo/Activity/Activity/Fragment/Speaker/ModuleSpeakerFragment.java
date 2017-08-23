@@ -1,4 +1,4 @@
-package com.example.sireremy.grabodomo.Activity.Activity.Fragment;
+package com.example.sireremy.grabodomo.Activity.Activity.Fragment.Speaker;
 
 import android.media.MediaPlayer;
 import android.os.Bundle;
@@ -7,20 +7,22 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.CompoundButton;
-import android.widget.ImageView;
 import android.widget.SeekBar;
 import android.widget.Switch;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.example.sireremy.grabodomo.Activity.Activity.Model.Son;
+import com.example.sireremy.grabodomo.Activity.Activity.Fragment.DeviceFragment;
+import com.example.sireremy.grabodomo.Activity.Activity.Model.Device;
+import com.example.sireremy.grabodomo.Activity.Activity.Model.EqualizerSetting;
+import com.example.sireremy.grabodomo.Activity.Activity.Model.Speaker;
 import com.example.sireremy.grabodomo.R;
 
 /**
  * Created by SireRemy on 04/08/2017.
  */
 
-public class ModuleSonFragment extends Fragment implements View.OnClickListener {
+public class ModuleSpeakerFragment extends DeviceFragment implements View.OnClickListener {
 
     /**
      * Création de lavue
@@ -31,16 +33,19 @@ public class ModuleSonFragment extends Fragment implements View.OnClickListener 
      */
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        return inflater.inflate(R.layout.activity_module_son, null);
+        return inflater.inflate(R.layout.activity_module_speaker, null);
     }
-    private Son son;
+    //REPETITION
+    protected Device device;
+    protected Speaker speaker;
+    protected EqualizerSetting equalizerSetting;
+
 
     Switch aSwitch;
 
     private SeekBar seekBar;
-    private TextView textView;
+    private TextView number100, plugName;
 
-    private MediaPlayer mPlayer = null;
 
     @Override
     public void onViewCreated(View view, Bundle savedInstanceState) {
@@ -48,7 +53,10 @@ public class ModuleSonFragment extends Fragment implements View.OnClickListener 
 
         aSwitch = (Switch) view.findViewById(R.id.sonSwitch);
         seekBar = (SeekBar) view.findViewById(R.id.seekBar1);
-        textView = (TextView) view.findViewById(R.id.textView1);
+        number100 = (TextView) view.findViewById(R.id.textView1);
+        plugName = (TextView) view.findViewById(R.id.PlugName);
+
+        //plugName.setText(speaker.getSpeakerName());
 
         aSwitch.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
@@ -56,10 +64,10 @@ public class ModuleSonFragment extends Fragment implements View.OnClickListener 
                 if(isChecked) {
                     Toast.makeText(getActivity(), "ON", Toast.LENGTH_SHORT).show();
                     seekBar.setVisibility(View.VISIBLE);
-                    textView.setVisibility(View.VISIBLE);
+                    number100.setVisibility(View.VISIBLE);
 
                     // Initialize the textview with '0'
-                    textView.setText(seekBar.getProgress() + "%");
+                    number100.setText(seekBar.getProgress() + "%");
                     seekBar.setOnSeekBarChangeListener(
 
                             new SeekBar.OnSeekBarChangeListener() {
@@ -78,18 +86,15 @@ public class ModuleSonFragment extends Fragment implements View.OnClickListener 
                                 @Override
                                 public void onStopTrackingTouch(SeekBar seekBar) {
                                     // Display the value in textview
-                                    textView.setText(progress + "%");
+                                    number100.setText(progress + "%");
 
                                 }
                             });
-
-
                 }
                 else {
                     Toast.makeText(getActivity(), "OFF", Toast.LENGTH_SHORT).show();
                     seekBar.setVisibility(View.INVISIBLE);
-                    textView.setVisibility(View.INVISIBLE);
-                    onPause();
+                    number100.setVisibility(View.INVISIBLE);
                 }
             }
         });
@@ -101,22 +106,28 @@ public class ModuleSonFragment extends Fragment implements View.OnClickListener 
 
     }
 
-    @Override
-    public void onPause() {
-        super.onPause();
-        if(mPlayer != null) {
-            mPlayer.stop();
-            mPlayer.release();
-        }
-    }
+    public void equalizerSettings(){
+        switch (equalizerSetting ){
+            case NORMAL:
 
-    private void playSound(int resId) {
-        if(mPlayer != null) {
-            mPlayer.stop();
-            mPlayer.release();
+                break;
+            case AUTO:
+
+                break;
+            case POP:
+
+                break;
+            case CLASSICAL:
+
+                break;
+            case JAZZ:
+
+                break;
+            case ROCK:
+
+                break;
+            default:
         }
-        mPlayer = MediaPlayer.create(getActivity(), resId);
-        mPlayer.start();
     }
 
 }

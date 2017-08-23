@@ -1,4 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 <string name="app_name">GraboDomo</string>
+
+    <!-- Main Activity  -->
+    <string name="module_plug">Module Prise</string>
+    <string name="module_speaker">Module Son</string>
+    <string name="module_humidity">Module Humidité</string>
+    <string name="module_temperature">Module Température</string>
+
+
 </resources>

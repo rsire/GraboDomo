@@ -12,25 +12,39 @@
 
     <Button
         android:id="@+id/Plug"
-        android:text="Module Prise"
+        android:text="@string/module_plug"
         android:textColor="@color/colorPrimaryDark"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
     <Button
+        android:id="@+id/Speaker"
         android:layout_below="@+id/Plug"
-        android:id="@+id/Son"
-        android:text="Module Son"
+        android:text="@string/module_speaker"
+        android:textColor="@color/colorPrimaryDark"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <Button
+        android:id="@+id/Humidite"
+        android:layout_below="@+id/Speaker"
+        android:text="@string/module_humidity"
+        android:textColor="@color/colorPrimaryDark"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <Button
+        android:id="@+id/Temperature"
+        android:layout_below="@+id/Humidite"
+        android:text="@string/module_temperature"
         android:textColor="@color/colorPrimaryDark"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
 
     <FrameLayout
-        android:layout_below="@+id/Son"
+        android:layout_below="@+id/Temperature"
         android:id="@+id/frameLayout"
         android:layout_marginBottom="5dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"/>
 
 </RelativeLayout>
-
-

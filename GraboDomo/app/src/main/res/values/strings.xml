@@ -1,3 +1,10 @@
 <resources>
     <string name="app_name">GraboDomo</string>
+
+    <!-- Main Activity  -->
+    <string name="module_plug">Module Plug</string>
+    <string name="module_speaker">Module Speaker</string>
+    <string name="module_humidity">Module Humidity</string>
+    <string name="module_temperature">Module Temperature</string>
+
 </resources>

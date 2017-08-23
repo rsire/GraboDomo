@@ -1,5 +1,7 @@
 package com.example.sireremy.grabodomo.Activity.Activity.Model;
 
+import com.example.sireremy.grabodomo.Activity.Activity.Fragment.DeviceFragment;
+
 import org.json.JSONObject;
 
 /**
@@ -8,53 +10,48 @@ import org.json.JSONObject;
  * Modèle objet de Plug avec ses getters et setters Il se construit directement a partir d'un JSONObject
  */
 
-public class Plug {
+public class Plug extends Device {
 
-    private int plugId;
-    private boolean etat;
-    private String puissance;
-    private String consommation;
+    private String power;
+    private String powerConsumption;
 
-    /**
-     *
-     * @param json
-     */
+    public Plug(JSONObject json, String power, String powerConsumption) {
+        super(json);
+        this.power = power;
+        this.powerConsumption = powerConsumption;
+    }
+
+    public Plug(int id, String name, DeviceStatus deviceStatus, String power, String powerConsumption) {
+        super(id, name, deviceStatus);
+        this.power = power;
+        this.powerConsumption = powerConsumption;
+    }
+
+    public Plug(String power, String powerConsumption) {
+        this.power = power;
+        this.powerConsumption = powerConsumption;
+    }
+
     public Plug(JSONObject json) {
-        plugId = json.optInt("PriseId");
-        etat = json.optBoolean("Etat");
-        puissance = json.optString("Puissance");
-        consommation = json.optString("Consommation");
+        super(json);
+            power = json.optString("Puissance");
+            powerConsumption = json.optString("Consommation");
+        }
+
+
+    public String getPower() {
+        return power;
     }
 
-    public int getPlugId() {
-        return plugId;
+    public void setPower(String power) {
+        this.power = power;
     }
 
-    public void setPlugId(int plugId) {
-        this.plugId = plugId;
+    public String getPowerConsumption() {
+        return powerConsumption;
     }
 
-    public boolean isEtat() {
-        return etat;
-    }
-
-    public void setEtat(boolean etat) {
-        this.etat = etat;
-    }
-
-    public String getPuissance() {
-        return puissance;
-    }
-
-    public void setPuissance(String puissance) {
-        this.puissance = puissance;
-    }
-
-    public String getConsommation() {
-        return consommation;
-    }
-
-    public void setConsommation(String consommation) {
-        this.consommation = consommation;
+    public void setPowerConsumption(String powerConsumption) {
+        this.powerConsumption = powerConsumption;
     }
 }

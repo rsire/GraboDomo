@@ -10,6 +10,7 @@ import com.android.volley.VolleyError;
 import com.android.volley.toolbox.JsonObjectRequest;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
+import com.example.sireremy.grabodomo.Activity.Activity.Adapter.PlugAdapter;
 import com.example.sireremy.grabodomo.Activity.Activity.Model.Plug;
 
 import org.json.JSONArray;
@@ -70,6 +71,7 @@ public class ClientPlug {
      * Il recupère le resultat sous forme de json et le convertit en un tableau d'objets Plugs
      * @param listener
      */
+    /*
     public void requestPlugs(final OnPlugsListListener listener, String url) {
 
         String apiUrl = "url";
@@ -105,13 +107,15 @@ public class ClientPlug {
                 });
         queue.add(request);
     }
+    */
 
     /**
      * Methode permettant de recuperer toutes les plugs
+     *
      * @return
      */
     public ArrayList<Plug> getPlugs() {
-        return plugs;
+        return null;
     }
 
     /**
@@ -121,6 +125,9 @@ public class ClientPlug {
      */
     public Plug getPlug(int id) {
         return plugHash.get(id);
+    }
+
+    public void requestPlugs(PlugAdapter plugAdapter) {
     }
 
     /**

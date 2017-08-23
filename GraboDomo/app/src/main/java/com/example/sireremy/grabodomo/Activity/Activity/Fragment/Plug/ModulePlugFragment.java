@@ -1,4 +1,4 @@
-package com.example.sireremy.grabodomo.Activity.Activity.Fragment;
+package com.example.sireremy.grabodomo.Activity.Activity.Fragment.Plug;
 
 import android.support.v4.app.Fragment;
 import android.os.Bundle;
@@ -10,6 +10,8 @@ import android.widget.ImageView;
 import android.widget.Switch;
 import android.widget.Toast;
 
+import com.example.sireremy.grabodomo.Activity.Activity.Fragment.DeviceFragment;
+import com.example.sireremy.grabodomo.Activity.Activity.Model.Device;
 import com.example.sireremy.grabodomo.Activity.Activity.Model.Plug;
 import com.example.sireremy.grabodomo.R;
 
@@ -19,10 +21,10 @@ import com.example.sireremy.grabodomo.R;
  * Fragment appellé dans la main activity
  */
 
-public class ModulePlugFragment extends Fragment implements View.OnClickListener{
+public class ModulePlugFragment extends DeviceFragment implements View.OnClickListener{
 
     /**
-     * Création de lavue
+     * Création de la vue
      * @param inflater
      * @param container
      * @param savedInstanceState
@@ -37,7 +39,8 @@ public class ModulePlugFragment extends Fragment implements View.OnClickListener
     ImageView imageViewON;
     ImageView imageViewOFF;
 
-    private Plug plug;
+    protected Device device;
+    protected Plug plug;
 
     @Override
     public void onViewCreated(View view, Bundle savedInstanceState) {

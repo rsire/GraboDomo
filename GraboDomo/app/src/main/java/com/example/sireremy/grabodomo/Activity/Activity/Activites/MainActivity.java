@@ -1,17 +1,14 @@
 package com.example.sireremy.grabodomo.Activity.Activity.Activites;
 
-import android.Manifest;
-import android.content.Intent;
-import android.content.pm.PackageManager;
-import android.support.v4.app.ActivityCompat;
-import android.support.v4.content.ContextCompat;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 
-import com.example.sireremy.grabodomo.Activity.Activity.Fragment.ModulePlugFragment;
-import com.example.sireremy.grabodomo.Activity.Activity.Fragment.ModuleSonFragment;
+import com.example.sireremy.grabodomo.Activity.Activity.Fragment.Humidity.ModuleHumidityFragment;
+import com.example.sireremy.grabodomo.Activity.Activity.Fragment.Plug.ModulePlugFragment;
+import com.example.sireremy.grabodomo.Activity.Activity.Fragment.Speaker.ModuleSpeakerFragment;
+import com.example.sireremy.grabodomo.Activity.Activity.Fragment.Temperature.ModuleTemperatureFragment;
 import com.example.sireremy.grabodomo.R;
 
 /**
@@ -23,7 +20,9 @@ import com.example.sireremy.grabodomo.R;
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
     private Button buttonPlug;
-    private Button buttonSon;
+    private Button buttonSpeaker;
+    private Button buttonHumidity;
+    private Button buttonTemperature;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,10 +30,14 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         setContentView(R.layout.activity_main);
 
         buttonPlug = (Button) findViewById(R.id.Plug);
-        buttonSon = (Button) findViewById(R.id.Son);
+        buttonSpeaker = (Button) findViewById(R.id.Speaker);
+        buttonHumidity = (Button) findViewById(R.id.Humidite);
+        buttonTemperature = (Button) findViewById(R.id.Temperature);
 
         buttonPlug.setOnClickListener(this);
-        buttonSon.setOnClickListener(this);
+        buttonSpeaker.setOnClickListener(this);
+        buttonHumidity.setOnClickListener(this);
+        buttonTemperature.setOnClickListener(this);
 
     }
 
@@ -45,9 +48,19 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                     .replace(R.id.frameLayout, new ModulePlugFragment())
                     .commit();
         }
-        else if(view==buttonSon) {
+        if(view==buttonSpeaker) {
             getSupportFragmentManager().beginTransaction()
-                    .replace(R.id.frameLayout, new ModuleSonFragment())
+                    .replace(R.id.frameLayout, new ModuleSpeakerFragment())
+                    .commit();
+        }
+        if(view==buttonHumidity) {
+            getSupportFragmentManager().beginTransaction()
+                    .replace(R.id.frameLayout, new ModuleHumidityFragment())
+                    .commit();
+        }
+        else if(view==buttonTemperature) {
+            getSupportFragmentManager().beginTransaction()
+                    .replace(R.id.frameLayout, new ModuleTemperatureFragment())
                     .commit();
         }
     }
