@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <tabs>
+        <tab
+            id="@+id/tab_notif"
+            icon="@drawable/ic_notifications_black_24dp"
+            title="Alert"
+            barColorWhenSelected="#FFFFFF" />
+        <tab
+            id="@+id/tab_home"
+            icon="@drawable/ic_home_black_24dp"
+            title="Home"
+            barColorWhenSelected="#FFFFFF"/>
+        <tab
+            id="@+id/tab_setting"
+            icon="@drawable/ic_settings_black_24dp"
+            title="Settings"
+            barColorWhenSelected="#FFFFFF"/>
+    </tabs>
+</PreferenceScreen>
+

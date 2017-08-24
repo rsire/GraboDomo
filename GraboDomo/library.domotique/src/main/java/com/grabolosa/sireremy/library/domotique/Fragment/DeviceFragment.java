@@ -4,6 +4,7 @@ import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.View;
 
+import com.grabolosa.sireremy.library.domotique.Clients.DataSource;
 import com.grabolosa.sireremy.library.domotique.Model.Device;
 import com.grabolosa.sireremy.library.domotique.Model.DeviceStatus;
 

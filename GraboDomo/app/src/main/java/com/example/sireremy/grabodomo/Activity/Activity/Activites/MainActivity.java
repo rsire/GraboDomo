@@ -1,15 +1,21 @@
 package com.example.sireremy.grabodomo.Activity.Activity.Activites;
 
+import android.graphics.Color;
 import android.os.Bundle;
+import android.support.annotation.IdRes;
+import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.Button;
 
-import com.grabolosa.sireremy.library.domotique.Fragment.Humidity.ModuleHumidityFragment;
-import com.grabolosa.sireremy.library.domotique.Fragment.Plug.ModulePlugFragment;
-import com.grabolosa.sireremy.library.domotique.Fragment.Speaker.ModuleSpeakerFragment;
-import com.grabolosa.sireremy.library.domotique.Fragment.Temperature.ModuleTemperatureFragment;
 import com.example.sireremy.grabodomo.R;
+import com.roughike.bottombar.BottomBar;
+import com.roughike.bottombar.OnTabSelectListener;
+
+import static com.example.sireremy.grabodomo.R.id.tab_home;
+import static com.example.sireremy.grabodomo.R.id.tab_notif;
+import static com.example.sireremy.grabodomo.R.id.tab_setting;
 
 /**
  * @author Sire Remy
@@ -17,50 +23,53 @@ import com.example.sireremy.grabodomo.R;
  * Classe gérant l'activité principale
  */
 
-public class MainActivity extends AppCompatActivity implements View.OnClickListener {
+public class MainActivity extends AppCompatActivity{
 
-    private Button buttonPlug;
-    private Button buttonSpeaker;
-    private Button buttonHumidity;
-    private Button buttonTemperature;
+    private Toolbar mToolbar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        buttonPlug = (Button) findViewById(R.id.Plug);
-        buttonSpeaker = (Button) findViewById(R.id.Speaker);
-        buttonHumidity = (Button) findViewById(R.id.Humidite);
-        buttonTemperature = (Button) findViewById(R.id.Temperature);
+        //Toolbar
+        mToolbar = (Toolbar) findViewById(R.id.customToolbar);
+        setSupportActionBar(mToolbar);
 
-        buttonPlug.setOnClickListener(this);
-        buttonSpeaker.setOnClickListener(this);
-        buttonHumidity.setOnClickListener(this);
-        buttonTemperature.setOnClickListener(this);
-    }
+        final ActionBar ab = getSupportActionBar();
+        ab.setDisplayShowTitleEnabled(false);
 
-    @Override
-    public void onClick(View view) {
-        if(view==buttonPlug) {
-            getSupportFragmentManager().beginTransaction()
-                    .replace(R.id.frameLayout, new ModulePlugFragment())
-                    .commit();
-        }
-        if(view==buttonSpeaker) {
-            getSupportFragmentManager().beginTransaction()
-                    .replace(R.id.frameLayout, new ModuleSpeakerFragment())
-                    .commit();
-        }
-        if(view==buttonHumidity) {
-            getSupportFragmentManager().beginTransaction()
-                    .replace(R.id.frameLayout, new ModuleHumidityFragment())
-                    .commit();
-        }
-        else if(view==buttonTemperature) {
-            getSupportFragmentManager().beginTransaction()
-                    .replace(R.id.frameLayout, new ModuleTemperatureFragment())
-                    .commit();
-        }
+        mToolbar.setTitle("Home");
+        mToolbar.setTitleTextColor(Color.WHITE);
+
+
+        /**
+         * Gestion des actions de la bottom bar, appel des fragments en fonction de l'onglet selectionné
+         */
+        //Initialisation de la vue principale + Mise en place des éléments du menu
+        BottomBar bottomBar = (BottomBar) findViewById(R.id.bottomBar);
+        bottomBar.setOnTabSelectListener(new OnTabSelectListener() {
+            @Override
+            public void onTabSelected(@IdRes int tabId) {
+                if(tabId==tab_notif) {
+                    getSupportFragmentManager().beginTransaction()
+                            .replace(R.id.fragmentMain, new AlertFragment())
+                            .commit();
+                    mToolbar.setTitle("Alert");
+                }
+                if(tabId==tab_home) {
+                    getSupportFragmentManager().beginTransaction()
+                            .replace(R.id.fragmentMain, new HomeFragment())
+                            .commit();
+                    mToolbar.setTitle("Home");
+                }
+                else if(tabId==tab_setting) {
+                    getSupportFragmentManager().beginTransaction()
+                            .replace(R.id.fragmentMain, new SettingFragment())
+                            .commit();
+                    mToolbar.setTitle("Settings");
+                }
+            }
+        });
     }
 }
