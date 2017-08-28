@@ -6,8 +6,6 @@ import android.support.annotation.IdRes;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
-import android.view.View;
-import android.widget.Button;
 
 import com.example.sireremy.grabodomo.R;
 import com.roughike.bottombar.BottomBar;
@@ -55,7 +53,7 @@ public class MainActivity extends AppCompatActivity{
                     getSupportFragmentManager().beginTransaction()
                             .replace(R.id.fragmentMain, new AlertFragment())
                             .commit();
-                    mToolbar.setTitle("Alert");
+                    mToolbar.setTitle("Notifications");
                 }
                 if(tabId==tab_home) {
                     getSupportFragmentManager().beginTransaction()

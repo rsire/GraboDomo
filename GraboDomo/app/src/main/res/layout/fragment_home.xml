@@ -14,42 +14,71 @@
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:layout_below="@+id/profile_layout"
-            android:layout_marginTop="5dp"
             android:orientation="vertical">
 
-            <Button
-                android:id="@+id/Plug"
-                android:text="module_plug"
-                android:textColor="@color/colorPrimaryDark"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content" />
-            <Button
-                android:id="@+id/Speaker"
-                android:layout_below="@+id/Plug"
-                android:text="module_speaker"
-                android:textColor="@color/colorPrimaryDark"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content" />
+                <LinearLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:orientation="horizontal">
 
-            <Button
-                android:id="@+id/Humidite"
-                android:layout_below="@+id/Speaker"
-                android:text="module_humidity"
-                android:textColor="@color/colorPrimaryDark"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content" />
+                    <Button
+                        android:id="@+id/Plug"
+                        android:text="Prise"
+                        android:layout_marginLeft="4dp"
+                        android:layout_marginRight="4dp"
+                        android:background="@color/orange"
+                        android:textColor="@color/colorPrimaryDark"
+                        android:layout_width="189dp"
+                        android:layout_height="wrap_content" />
 
-            <Button
-                android:id="@+id/Temperature"
-                android:layout_below="@+id/Humidite"
-                android:text="module_temperature"
-                android:textColor="@color/colorPrimaryDark"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content" />
+                    <Button
+                        android:id="@+id/Speaker"
+                        android:layout_below="@+id/Plug"
+                        android:text="Son"
+                        android:layout_marginLeft="4dp"
+                        android:layout_marginRight="4dp"
+                        android:background="@color/purple"
+                        android:textColor="@color/colorPrimaryDark"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:orientation="horizontal">
+
+                    <Button
+                        android:id="@+id/Humidite"
+                        android:layout_below="@+id/Speaker"
+                        android:text="Humidity"
+                        android:layout_marginLeft="4dp"
+                        android:layout_marginRight="4dp"
+                        android:background="@color/darkblue"
+                        android:textColor="@color/colorPrimaryDark"
+                        android:layout_width="191dp"
+                        android:layout_height="wrap_content" />
+
+                    <Button
+                        android:id="@+id/Temperature"
+                        android:layout_below="@+id/Humidite"
+                        android:text="Temperature"
+                        android:layout_marginLeft="4dp"
+                        android:layout_marginRight="4dp"
+                        android:background="@color/red"
+                        android:textColor="@color/colorPrimaryDark"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" />
+
+                </LinearLayout>
 
             <FrameLayout
                 android:layout_below="@+id/Temperature"
                 android:id="@+id/frameLayout"
+                android:layout_marginTop="4dp"
                 android:layout_marginBottom="5dp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"/>
